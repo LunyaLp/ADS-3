@@ -1,9 +1,9 @@
 // Copyright 2021 NNTU-CS
 
 int cbinsearch(int *arr, int size, int value) {
-  uint16_t leftBorder = 0;
-  uint16_t rightBorder = size - 1;
-  uint16_t counter = 0;
+  int leftBorder = 0;
+  int rightBorder = size - 1;
+  int counter = 0;
   while (leftBorder <= rightBorder) {
     int part = (leftBorder + rightBorder)/2;
     if (arr[part] == value) {
@@ -11,7 +11,7 @@ int cbinsearch(int *arr, int size, int value) {
     }
     if (arr[part] > value) {
       rightBorder = part-1;
-    }else{
+    } else {
       if (value > arr[part]) {
         leftBorder = part+1;
       }
